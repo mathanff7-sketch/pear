@@ -147,7 +147,12 @@ app.delete('/api/bookings/:id', (req, res) => {
 
     res.json({ success: true, message: 'Booking deleted', booking: removed });
 });
-
+app.get('/', (req,res)=>{
+    res.status(200).json({
+        success:true,
+        message:"server is running success full"
+    });
+});
 // 404 handler
 app.use((req, res) => {
     res.status(404).json({ success: false, message: 'Route not found' });
